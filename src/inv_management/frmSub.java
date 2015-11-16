@@ -5,8 +5,8 @@
  */
 package inv_management;
 
-import Form.frmCust_Sup;
-import Form.frmEmployee;
+import Form.frmAddCust_Sup;
+import Form.frmAddEmployee;
 
 /**
  *
@@ -346,13 +346,13 @@ public class frmSub extends javax.swing.JFrame {
 
     private void bntCustSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCustSupActionPerformed
         // TODO add your handling code here:
-        new frmCust_Sup().setVisible(rootPaneCheckingEnabled);
+        new frmAddCust_Sup().setVisible(rootPaneCheckingEnabled);
         
     }//GEN-LAST:event_bntCustSupActionPerformed
 
     private void bntEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEmployeeActionPerformed
         // TODO add your handling code here:
-        new frmEmployee().setVisible(true);
+        new frmAddEmployee().setVisible(true);
     }//GEN-LAST:event_bntEmployeeActionPerformed
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed

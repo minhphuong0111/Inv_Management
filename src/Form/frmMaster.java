@@ -33,12 +33,8 @@ public class frmMaster extends javax.swing.JFrame {
         panelEntry = new javax.swing.JPanel();
         panelNavigator = new javax.swing.JPanel();
         Navigator = new javax.swing.JPanel();
-        btnSearch = new javax.swing.JButton();
-        btnNew = new javax.swing.JButton();
-        btnRefresh = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
-        btnHelp = new javax.swing.JButton();
         panelTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -82,21 +78,12 @@ public class frmMaster extends javax.swing.JFrame {
 
         panelNavigator.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Navigator.setLayout(new java.awt.GridLayout(1, 0));
-
-        btnSearch.setText("Search");
-        Navigator.add(btnSearch);
-
-        btnNew.setText("New");
-        Navigator.add(btnNew);
-
-        btnRefresh.setText("Refresh");
-        Navigator.add(btnRefresh);
+        Navigator.setLayout(new java.awt.GridLayout(1, 0, 4, 0));
 
         btnSave.setText("Save");
         Navigator.add(btnSave);
 
-        btnClose.setText("Close");
+        btnClose.setText("Cancel");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -104,17 +91,14 @@ public class frmMaster extends javax.swing.JFrame {
         });
         Navigator.add(btnClose);
 
-        btnHelp.setText("Help");
-        Navigator.add(btnHelp);
-
         javax.swing.GroupLayout panelNavigatorLayout = new javax.swing.GroupLayout(panelNavigator);
         panelNavigator.setLayout(panelNavigatorLayout);
         panelNavigatorLayout.setHorizontalGroup(
             panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigatorLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(351, Short.MAX_VALUE))
+                .addContainerGap())
         );
         panelNavigatorLayout.setVerticalGroup(
             panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,11 +263,7 @@ public class frmMaster extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Navigator;
     private javax.swing.JButton btnClose;
-    private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnNew;
-    private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;

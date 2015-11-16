@@ -5,9 +5,11 @@
  */
 package inv_management;
 
-import Form.frmCust_Sup;
-import Form.frmEmployee;
-import Form.frmProduct;
+import Form.frmAddCategory;
+import Form.frmAddCust_Sup;
+import Form.frmAddEmployee;
+import Form.frmAddManufacture;
+import Form.frmAddProduct;
 
 /**
  *
@@ -55,6 +57,8 @@ public class frmMain extends javax.swing.JFrame {
         btnEmployee = new javax.swing.JButton();
         btnDepartment = new javax.swing.JButton();
         btnBinCard = new javax.swing.JButton();
+        btnCategory = new javax.swing.JButton();
+        btnManufacture = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblHeader = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
@@ -82,6 +86,9 @@ public class frmMain extends javax.swing.JFrame {
 
         footer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         footer.setLayout(new java.awt.GridLayout(1, 0));
+
+        jToolBar1.setRollover(true);
+        jToolBar1.setInheritsPopupMenu(true);
 
         jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -140,6 +147,9 @@ public class frmMain extends javax.swing.JFrame {
 
         jToolBar1.add(jPanel2);
 
+        Table.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -151,6 +161,8 @@ public class frmMain extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setCellSelectionEnabled(true);
+        jTable1.setInheritsPopupMenu(true);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout TableLayout = new javax.swing.GroupLayout(Table);
@@ -159,13 +171,13 @@ public class frmMain extends javax.swing.JFrame {
             TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TableLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
                 .addContainerGap())
         );
         TableLayout.setVerticalGroup(
             TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TableLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
@@ -183,7 +195,7 @@ public class frmMain extends javax.swing.JFrame {
             ScrollMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ScrollMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -237,6 +249,22 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
+        btnCategory.setText("Category");
+        btnCategory.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoryActionPerformed(evt);
+            }
+        });
+
+        btnManufacture.setText("Manufacture");
+        btnManufacture.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnManufacture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManufactureActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout paneMenuLayout = new javax.swing.GroupLayout(paneMenu);
         paneMenu.setLayout(paneMenuLayout);
         paneMenuLayout.setHorizontalGroup(
@@ -249,13 +277,19 @@ public class frmMain extends javax.swing.JFrame {
                     .addComponent(btnInventory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBinCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCategory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManufacture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(250, 250, 250))
         );
         paneMenuLayout.setVerticalGroup(
             paneMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnManufacture)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCategory)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBinCard)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDepartment)
@@ -289,9 +323,9 @@ public class frmMain extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(lblHeader)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         menuBar.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -370,7 +404,9 @@ public class frmMain extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ScrollMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -391,16 +427,16 @@ public class frmMain extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Table, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ScrollMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(paneMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -414,22 +450,22 @@ public class frmMain extends javax.swing.JFrame {
 
     private void btnCustSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSupActionPerformed
         // TODO add your handling code here:
-        new frmCust_Sup().setVisible(true);
+        new frmAddCust_Sup().setVisible(true);
         this.lblHeader.setText(this.btnCustSup.getText());
     }//GEN-LAST:event_btnCustSupActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
         // TODO add your handling code here:
-        new frmEmployee().setVisible(true);
+        new frmAddEmployee().setVisible(true);
         this.lblHeader.setText(this.btnEmployee.getText());
     }//GEN-LAST:event_btnEmployeeActionPerformed
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
         // TODO add your handling code here:
-        new frmProduct().setVisible(true);
+        new frmAddProduct().setVisible(true);
         this.lblHeader.setText(this.btnProduct.getText());
-        
-        
+
+
     }//GEN-LAST:event_btnProductActionPerformed
 
     private void lblHeaderComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblHeaderComponentShown
@@ -458,6 +494,19 @@ public class frmMain extends javax.swing.JFrame {
     private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowStateChanged
+
+    private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
+        // TODO add your handling code here:
+        new frmAddCategory().setVisible(true);
+        this.lblHeader.setText(this.btnCategory.getText());
+    }//GEN-LAST:event_btnCategoryActionPerformed
+
+    private void btnManufactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManufactureActionPerformed
+        // TODO add your handling code here:
+        new frmAddManufacture().setVisible(true);
+        this.lblHeader.setText(this.btnManufacture.getText());
+
+    }//GEN-LAST:event_btnManufactureActionPerformed
 
     /**
      * @param args the command line arguments
@@ -506,12 +555,14 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton bntPrint;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBinCard;
+    private javax.swing.JButton btnCategory;
     private javax.swing.JButton btnCustSup;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDepartment;
     private javax.swing.JButton btnEmployee;
     private javax.swing.JButton btnFind;
     private javax.swing.JButton btnInventory;
+    private javax.swing.JButton btnManufacture;
     private javax.swing.JButton btnProduct;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
